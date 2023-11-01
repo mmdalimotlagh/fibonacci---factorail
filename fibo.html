@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fibonacci Calculator</title>
+    <script>
+        function fibonacci(n) {
+            if (n <= 1) {
+                return n;
+            } else {
+                return fibonacci(n-1) + fibonacci(n-2);
+            }
+        }
+
+        function calculateFibonacci() {
+            var num = parseInt(document.getElementById("numberInput").value);
+            var result = fibonacci(num);
+            document.getElementById("result").innerHTML = "Fibonacci number at position " + num + " is " + result;
+        }
+    </script>
+    <style>
+        body{
+            background-color: darkseagreen;
+        }
+    </style>
+</head>
+<body>
+<h1>Fibonacci Calculator</h1>
+<label for="numberInput">Enter a position: </label>
+<input type="number" id="numberInput">
+<button onclick="calculateFibonacci()">Calculate</button>
+<p id="result"></p>
+</body>
+</html>
